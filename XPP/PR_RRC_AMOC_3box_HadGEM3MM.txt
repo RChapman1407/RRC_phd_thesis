@@ -1,0 +1,98 @@
+# 3 box model for the AMOC	(2 times CO2)
+# April 2021
+# run using xppaut
+#
+# reduced to three boxes by setting SB and SS constant
+# 
+
+# parameters
+par H=0
+par gamma = 0.58
+
+# change 
+par DeltaKN=1
+par DeltaKS=1
+par DeltaKIP=1
+par Deltaeta=1
+
+# dynamic variables
+init SN=-0.0088
+init ST=0.0435
+#init ST = 0.036
+
+# fixed 
+SS = (0.034427-S0)*100
+# fixed
+SB = (0.034538-S0)*100
+
+#
+VN = 4.192e16
+VT = 4.192e16 
+VS = 13.26e16 
+VIP = 16.95e16 
+VB = 96.76e16 
+
+Y = 3.15e7
+mu = 0
+
+lambda = 2.328e7 
+#m^6kg^-1
+
+alpha = 0.12 
+#kg m^-3 C^-1
+
+beta = 790.0 
+#kg m^-3 
+ 
+TS = 5.349 
+#C
+
+T0 = 4.514 
+#C
+
+C = 4.6994e16  
+#(total sum of V*S)
+ 
+ 
+#dimensionless
+
+eta = 66.061e6*Deltaeta 
+#mu  #deg s m^-3
+ 
+KN = 4.73e6*DeltaKN
+KS = 7.68e6*DeltaKS
+KIP = 123.49e6*DeltaKIP
+ 
+# Hosing variables
+FN = 0.2799e6 + H*0.9841e6
+FT = -0.7920e6 - H*0.1853e6
+FS = 1.485e6 - H*0.1742e6
+FIP = -0.9729e6 - H*0.6245e6
+# lots more freshwater going into FN, a lot less in FT
+ 
+S0 = 0.035 
+# dimensionless
+ 
+q = lambda*(alpha*(TS-T0)+beta*(SN/100-SS/100))/(1+lambda*alpha*mu)
+aq = abs(q)
+
+#SIP = (C/VIP)-((VN/VIP)*SN+(VT/VIP)*ST+(VS/VIP)*SS+(VB/VIP)*SB)
+SIP = 100*(C-(VN*SN+VT*ST+VS*SS+VB*SB)/100-S0*(VB+VN+VT+VIP+VS))/VIP
+
+
+z1p = (Y/VN)*(q*(ST-SN)+KN*(ST-SN)-100*FN*S0) 
+z2p = (Y/VT)*(q*(gamma*SS+(1-gamma)*SIP-ST)+KS*(SS-ST)+KN*(SN-ST)-100*FT*S0) 
+    
+
+z1n = (Y/VN)*(aq*(SB-SN)+KN*(ST-SN)-100*FN*S0) 
+z2n = (Y/VT)*(aq*(SN-ST)+KS*(SS-ST)+KN*(SN-ST)-100*FT*S0)
+
+ 
+SN' = if(q>0)then(z1p)else(z1n)
+ST' = if(q>0)then(z2p)else(z2n)
+
+ 
+@ total=1000, dt=0.5
+@ ds=0.001, dsmin=1e-6, dsmax=0.001, epsu=1e-6, epsl=1e-7, epss=1e-6, parmin=-1, parmax=1
+@ NMax=5000, NPr=500
+done
