@@ -1,0 +1,13 @@
+Here, I will briefly describe the changes which have been made to the code olim4vad.c to run for our system, as well as changes which must be made to run different calibrations and mesh refinements. 
+Line numbers given correspond to those in AMOC OLIM4 decades N 1024 K 22 FAMOUSB2xCO2 on TOL1e-12.c
+
+We set to the tolerance to be $TOL  = 1.0 \times 10^{-12}$
+Line 20 and 21, define the mesh spacing $NX, NY$
+Line 22, define the step size $K$
+Line 27, include the parameter file for the calibration
+Lines 168-212,  include the equations for the system being calculated
+Lines 216-227, include the noise matrix, Sigma. Here, we set the noise to be the identity matrix in this Chapter, unless otherwise stated.
+Line 264, include the Jacobian evaluated at the starting point
+In the parameter file, Lines 39-42, define the boundaries of the calculation
+In the parameter file, Lines 46 and 47, define the starting position for the calculation
+In the parameter file, Lines 51 and 52, define the end point of a minimum action path for the backwards shooting method.
