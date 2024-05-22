@@ -1,0 +1,51 @@
+
+This programme finds an estimate of the noise covariance of a given data set using Equation 5.2.2
+
+Import model parameters
+Set initial values and vector of time steps
+Import FAMOUS data
+Define starting values for search
+
+Function approx log likelihood function (data, time step, unknown matrix, parameters)
+    Check that the covariance is positive definite using covmat function
+	  For each data step, find corresponding time step
+		Calculate the hosing at that data step
+		Evaluate the model equations at the data step
+		Define the noise matrix L for state dependent noise
+		Calculate the log likelihood function at the time step
+		Add the likelihood evaluation to a matrix and store
+
+Use fminsearch to minimise the likelihood function from the starting points
+
+Generate a time series solution of the SDE with the parameter estimates using Cholesky Decomposition chol to find the noise amplitudes from the estimated covariance
+
+Use ThreeboxEMvectors to solve the model for the given noise amplitudes,parameters and hosing function chosen 
+
+Plot the model with the estimated noise, no noise and the data
+
+Function hosing (time)
+    Calculate hosing at each time step and return vector H
+
+Function covmat (unknown matrix)
+    Set of functions that take the unknown matrix and 
+    ensure the output Q is always positive definite
+
+Function threeboxmodel (salinity input, parameters, hosing)
+    Define the starting salinities for each box
+    Calculate the strength of the circulation, q
+    Input the hosing into the model as FN = p.FN + p.AN*H
+	    If q is greater than 0
+		    Equations for on state
+	    Else
+		    Equations for off state
+	    End
+
+Function ThreeboxEMvectors (noise input, time steps, salinity inputs, parameters, hosing)
+    Generate the normally distributed random variables using normrnd(0,1,[1,length])
+    Use cholesky to decompose the input noise covariance
+	    For each time step
+		    Evaluate the model equations at the time step
+		    Calculate the noise increment 
+		    W = sqrt(time step)*random variable at time step
+		    Calculate matrix of noise
+		    Add noise to each model equation at each time step
