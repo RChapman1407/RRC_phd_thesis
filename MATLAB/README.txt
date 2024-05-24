@@ -15,3 +15,5 @@ Matlab function script used to implement the forcing profile described in Sectio
 loglikelihood implementation.txt
 Explains the implementation of the loglieklihood method used in Chapter 5 and Appendix C in a pseudo-code. Can be used to help futher understand HadGEM3_GC31_MM_noise_FnFsFt_estimation_decadal.m above
 
+slow_hosing_plot_stacked.m
+Produces Figure 3.6, plot for slow hosing experiement. Based on same code sued for Figure 3.10, 3.11, 3.12. 
