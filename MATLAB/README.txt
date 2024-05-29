@@ -9,6 +9,9 @@ This file does the noise estimation and parameter optimisation using a loglikeli
 Plot_Salinity_Temperature_timeseries_RRC_copy.m
 Produces Figure 4.3, plot of the CMIP6 salinity and temperature timeseries (extracted from HadGEM3 and via JASMIN), plotted as anomolies from the mean
 
+doPlotDataSTwithSEandQanalysisDecadal.m
+Code for fitting linear models to S,T and Q timeseries. Produces Figure 4.3, 4.4, 4.5, 4.6, 4.7 and the numerical results in Table 4.3, 4.4, 4.5.
+
 fivebox_hosing_experiment.m
 Produces Figure 3.6, hosing experiment using 5 boxes. The same code could also be used to produced Figure 3.5b. This also forms the base of the code for Figure 3.10, 3.11, 3.12
 
