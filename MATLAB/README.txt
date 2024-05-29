@@ -21,5 +21,3 @@ Explains the implementation of the loglieklihood method used in Chapter 5 and Ap
 plot_Threeboxbif_HadGEM3MM_PHASEPORTRAIT.m
 Produces Figure 3.8. Phase portrait for HadGEM3MM calibration of 3-box model at H = 0.1 Sv (in bi-stable regime)
 
-slow_hosing_plot_stacked.m
-Produces Figure 3.6, plot for slow hosing experiement. Based on same code sued for Figure 3.10, 3.11, 3.12. 
