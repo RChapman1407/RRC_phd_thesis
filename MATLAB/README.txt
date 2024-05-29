@@ -4,7 +4,7 @@ HadGEM3MM_MC_tipping_plot_300_years.m
 This produces Figure 5.10, Chapter 5. Example realsiation plot of some of the runs from the Monte Carlo experiment to caluclate tipping probabilities
 
 HadGEM3_GC31_MM_noise_FnFsFt_estimation_decadal.m
-This file does the noise estimation and parameter optimisation using a loglikelihood for HadGEM3MM as discussed in Chapter 5.
+This file does the noise estimation and parameter optimisation using a loglikelihood for HadGEM3MM as discussed in Chapter 5, numericalresults in Table 5.1.
 
 Plot_Salinity_Temperature_timeseries_RRC_copy.m
 Produces Figure 4.3, plot of the CMIP6 salinity and temperature timeseries (extracted from HadGEM3 and via JASMIN), plotted as anomolies from the mean
