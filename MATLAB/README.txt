@@ -10,7 +10,7 @@ Plot_Salinity_Temperature_timeseries_RRC_copy.m
 Produces Figure 4.3, plot of the CMIP6 salinity and temperature timeseries (extracted from HadGEM3 and via JASMIN), plotted as anomolies from the mean
 
 fivebox_hosing_experiment.m
-Produces Figure 3.6, hosing experiment using 5 boxes. The same code could also be used to produced Figure 3.5b.
+Produces Figure 3.6, hosing experiment using 5 boxes. The same code could also be used to produced Figure 3.5b. This also forms the base of the code for Figure 3.10, 3.11, 3.12
 
 hosingfunc.m
 Matlab function script used to implement the forcing profile described in Section 3.2, Figure 3.3 and Equation 3.2.3
