@@ -1,5 +1,5 @@
 # 3 box model for the AMOC	(HadGEM3MM)
-# Ruth Chapman and Paul Ritchie, April 2021
+# Ruth Chapman and Paul Ritchie, December 2023
 # run using xppaut
 # reduced to three boxes by setting SB and SS constant
 # 
