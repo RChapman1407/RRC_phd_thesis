@@ -128,7 +128,6 @@ function p = HadGEM3MMParameters()
 
 p.Vn = 4.192e16; p.Vt = 4.192e16; p.Vs = 13.26e16; p.Vip = 16.95e16; p.Vb = 96.76e16;
 p.Fn = 0.2799e6; p.Ft = -0.7920e6; p.Fs = 1.485e6; p.Fip = -0.9729e6; p.Fb = 0;
-%p.Sn = 0.03488; p.St = 0.03563; p.Ss = 0.03444; p.Sip = 0.0345; p.Sb = 0.03475; p.S0 = 0.0350;
 p.Sn = 0.034912; p.St = 0.035435; p.Ss = 0.034427; p.Sip = 0.0345; p.Sb = 0.034538; p.S0 = 0.0350;
 
 p.Ts = 5.349; p.T0 = 4.514;
@@ -138,7 +137,6 @@ p.alpha = 0.12; p.beta = 790; p.eta = 66.061e6;
 %alpha and beta from text in section 2.2
 %gamma still from FAMOUS A, no update
 p.lambda = 2.328e7; p.gamma = 0.58; p.mu = 0;
-%p.C = p.Vn*p.Sn + p.Vt*p.St + p.Vs*p.Ss + p.Vip*p.Sip + p.Vb*p.Sb;
 p.C = 4.6994e16;
 p.An = 0.9841; p.At = -0.1853; p.As = -0.1742; p.Aip = -0.6245; 
 % used for modifications
@@ -167,10 +165,7 @@ end
 function [h] = hosingfunc(time,Twait,Tpert,Trise,Tfall,height)
 %input t is time steps being used
 %output h is in m^3 s^-1
-% Tpert = 400;
-% Trise = 100;
-% Tfall = 310;
-% height = 0.37;%Sv
+
 raterise = height./Trise;
 ratefall = -(height-0.1)./Tfall;
 tst0 = time>0;
