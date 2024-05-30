@@ -1,7 +1,6 @@
-# 3 box model for the AMOC	(2 times CO2)
-# April 2021
+# 3 box model for the AMOC	(HadGEM3MM)
+# Ruth Chapman and Paul Ritchie, April 2021
 # run using xppaut
-#
 # reduced to three boxes by setting SB and SS constant
 # 
 
@@ -15,7 +14,7 @@ par DeltaKS=1
 par DeltaKIP=1
 par Deltaeta=1
 
-# dynamic variables
+# dynamic variables (scaled)
 init SN=-0.0088
 init ST=0.0435
 #init ST = 0.036
@@ -52,7 +51,6 @@ T0 = 4.514
 
 C = 4.6994e16  
 #(total sum of V*S)
- 
  
 #dimensionless
 
